@@ -1,19 +1,21 @@
+// swift-tools-version:4.0
 import PackageDescription
 
+
 let package = Package(
-  name: "Models",
-  products: [
-  .library(name: "Models"
-  ],
-      dependencies: [
-        .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "2.1.0")),
-        .package(url: "https://github.com/vapor/fluent-provider.git", .upToNextMajor(from: "1.2.0")),
+    name: "GameSystemModel",
+    products: [
+        .library(name: "GameSystemModel", targets: ["GameSystemModel"]),
+    ],
+    dependencies: [
+        // 💧 A server-side Swift web framework.
+        .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0"),
+
+        // 🔵 Swift ORM (queries, models, relations, etc) built on SQLite 3.
+        .package(url: "https://github.com/vapor/fluent-mysql.git", from: "3.0.0"),
     ],
     targets: [
-        .target(
-            name: "Models",
-            dependencies: ["Vapor", "FluentProvider"],
-        ),
-        .testTarget(name: "ModelTests", dependencies: ["Models", "Testing"])
+        .target(name: "GameSystemModel", dependencies: ["FluentMySQL", "Vapor"]),
+        .testTarget(name: "GameSystemModelTests", dependencies: ["GameSystemModel"]),
     ]
 )
