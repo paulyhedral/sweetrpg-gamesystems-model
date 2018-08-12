@@ -2,7 +2,7 @@ import Vapor
 import HTTP
 
 
-public final class GameSystem : Content {
+public final class GameSystem {
 public var id : String
 public var name : String
 public var details : String
@@ -14,4 +14,9 @@ public init(id : String, name : String, details : String = "", edition : String 
     self.details = details
     self.edition = edition
 }
+}
+
+extension GameSystem : Content {
+
+
 }
