@@ -3,19 +3,16 @@ import PackageDescription
 
 
 let package = Package(
-    name: "GameSystemModel",
+    name: "GameSystemObjects",
     products: [
-        .library(name: "GameSystemModel", targets: ["GameSystemModel"]),
+        .library(name: "GameSystemObjects", targets: ["GameSystemObjects"]),
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0"),
-
-        // 🔵 Swift ORM (queries, models, relations, etc) built on SQLite 3.
-        .package(url: "https://github.com/vapor/fluent-postgresql.git", from: "1.0.0"),
     ],
     targets: [
-        .target(name: "GameSystemModel", dependencies: ["FluentPostgreSQL", "Vapor"]),
-        .testTarget(name: "GameSystemModelTests", dependencies: ["GameSystemModel"]),
+        .target(name: "GameSystemObjects", dependencies: ["Vapor"]),
+        .testTarget(name: "GameSystemObjectsTests", dependencies: ["GameSystemObjects"]),
     ]
 )
