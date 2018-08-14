@@ -16,7 +16,7 @@ public init(id : String, name : String, details : String = "", edition : String 
 }
 }
 
-extension GameSystem : Content {
+// extension GameSystem : Content {
 
 
-}
+// }
