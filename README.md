@@ -1,1 +1,1 @@
-# sweetrpg-gamesystem-models
+# sweetrpg-gamesystem-model
